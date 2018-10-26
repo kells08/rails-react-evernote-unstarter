@@ -17,7 +17,7 @@ class UserForm extends Component {
     const { name, username, password } = this.state;
     return (
       <div className="noteform">
-        <h3>Please signup to enjoy AnyNote!</h3>
+        <h2>Please signup to enjoy AnyNote!</h2>
         <br/>
         <p>Name:</p> <input name="name" value={name} onChange={(e) => this.onChange(e)}/>
         <p>Username:</p> <input name="username" value={username} onChange={this.onChange}/>

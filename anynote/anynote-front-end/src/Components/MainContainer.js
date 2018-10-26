@@ -91,12 +91,6 @@ class MainContainer extends Component {
   handleLogout = (e) => {
     this.props.logout(this.state.username)
   }
-  
-  // newSearchNotes = (searchNotes) => {
-  //   this.setState({
-  //     notes: searchNotes
-  //   })
-  // }
 
   //-----------Search------------
   filterTitles = (e) => {
@@ -107,10 +101,10 @@ class MainContainer extends Component {
 
   filteredTitles = (searchTerm) => {
     const allTitles = this.state.notes
-    const searchTerm_L = searchTerm.toLowerCase()
+    const searchTermLower = searchTerm.toLowerCase()
     //console.log(allTitles)
     const filteredNotes = allTitles.filter( note => {
-      return note.title.toLowerCase().includes(searchTerm_L)
+      return note.title.toLowerCase().includes(searchTermLower)
     })
     console.log(filteredNotes)
     // return filteredNotes
@@ -126,6 +120,7 @@ class MainContainer extends Component {
       })
     }
   }
+  //---------end Search----------
 
   render(){
     console.log(this.state.notes)
@@ -146,7 +141,7 @@ class MainContainer extends Component {
           <div >
           {this.state.clickedSearch ? <Search notes={this.state.notes} filterTitles={this.filterTitles} /> : null }
           {this.state.clickedCreate ? <NoteForm submitForm={this.saveNewNote} /> : null}
-          { this.state.show 
+          { this.state.show && (this.state.clicked === false)
             ? this.state.filteredNotes.map(note => (
               <div className="" >
                 <Note note={note} key={note.id} selectNote={this.selectNote}/>
@@ -159,6 +154,8 @@ class MainContainer extends Component {
             )) 
           }
           {this.state.clicked ? <FullNote {...this.state.selectedNote} updateAllNotes={this.updateAllNotes} selectedNote={this.selectNote} /> : null }
+
+          
         </div>
         <br/>
         <br/>

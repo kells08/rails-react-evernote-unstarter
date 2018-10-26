@@ -13,7 +13,16 @@
 		background: #9fafd8;
 	}
 
-	body, span, input, select, textarea {
+	body, input, select, textarea {
+		color: black;
+		font-family: 'Raleway', sans-serif;
+		font-size: 12pt;
+		font-weight: 300;
+		line-height: 1.65em;
+		border: 2px solid #555555;
+	}
+	
+	span {
 		color: black;
 		font-family: 'Raleway', sans-serif;
 		font-size: 12pt;
@@ -25,6 +34,7 @@
 	a {
 		color: #610596;
 		text-decoration: underline;
+		border: none;
 	}
 
 	strong, b {
@@ -307,7 +317,7 @@
 	ul.icons {
 		cursor: default;
 		text-align: center;
-		margin-left: -30px;
+		margin-left: -40px;
 	}
 
 		ul.icons li {
@@ -638,7 +648,6 @@
 		background: url(./images/trianglify3large.png);
 		opacity: .9;
 		margin-top: 2.7em;
-		margin: auto;
 		padding: 1em;
 		text-align: center;
 	}
@@ -701,6 +710,7 @@
 		}
 		#copyright p {
 			font-size: .6em;
+			font-weight: 600;
 		}
 		#copyright a {
 			text-decoration: none;
@@ -712,11 +722,11 @@
 
 	.box {
 		padding: 3em 2em;
-		margin: 5em 3em 1em 3em;
+		margin: 5em 3em 2em 3em;
 		background: url(./images/trianglify3small.png);
 		opacity: .97;
 		text-align: center;
-		border-radius: 0px 0px 6px 6px;
+		border-radius: 6px;
 		width: 12em;
 		height: 10em;
 		display:block;
